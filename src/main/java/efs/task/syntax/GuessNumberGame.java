@@ -56,7 +56,13 @@ public class GuessNumberGame {
 
             this.trials[trial] = '*';
 
-            printProgress();
+            System.out.print("Twoje próby: [");
+
+            for (int i = 0; i < this.trials.length; i++) {
+                System.out.print(this.trials[i]);
+            }
+
+            System.out.println("]\n");
 
             System.out.println(UsefulConstants.GIVE_ME + " liczbę : ");
             Scanner scanner = new Scanner(System.in);
@@ -76,16 +82,9 @@ public class GuessNumberGame {
                 System.out.println("Hmm, '" + scanner.next() + "' to " + UsefulConstants.NOT_A_NUMBER);
             }
 
+
             trial++;
         }
 
-    }
-
-    public void printProgress() {
-        System.out.print("Twoje próby: [");
-        for (int i = 0; i < this.trials.length; i++) {
-            System.out.print(this.trials[i]);
-        }
-        System.out.println("]\n");
     }
 }
